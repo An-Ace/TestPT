@@ -40,7 +40,7 @@ Route::middleware(['auth:sanctum', 'apply_locale'])->group(function () {
      */
     Route::get('/roles/search', [RoleController::class, 'search'])->middleware('throttle:400,1');
 
-    Route::resource('product', ProductController::class);
+    Route::resource('/product', ProductController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('brands', BrandController::class);
 });

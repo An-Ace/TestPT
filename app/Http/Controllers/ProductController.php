@@ -11,11 +11,18 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $this->authorize('list', User::class);
+        // $this->authorize('list', User::class);
 
-        return $this->userService->index($request->all());
+        return response()->json(Product::all());
     }
     
+    public function show(Request $request)
+    {
+        // $this->authorize('list', User::class);
+
+        return response()->json(Product::all());
+    }
+
     public function create(Request $request) {
         $this->validate($request,[
             'modelNumber'=>'required|unique:products',
